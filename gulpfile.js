@@ -12,11 +12,12 @@ gulp.task("pack", function(callback) {
 });
 
 gulp.task('watch', function (){
-  gulp.watch('./static/src/**', ['pack']);
+  gulp.watch('./fe/**', ['pack']);
 });
 
 gulp.task('serve', ['pack'], function (){
   connect.server({
+    root: 'public',
     port: '8080',
     livereload: true
   });

@@ -6,7 +6,6 @@ import About from './About';
 import Inbox from './Inbox';
 import Message from './Message';
 
-
 class App extends Component {
   render() {
     return (
@@ -22,7 +21,6 @@ class App extends Component {
     );
   }
 };
-
 
 export default (
   <Router history={createHashHistory({queryKey: false})}>

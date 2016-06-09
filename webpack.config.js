@@ -1,9 +1,9 @@
 var path = require('path');
 
 module.exports = {
-  entry: "./static/src/index.js",
+  entry: "./fe/js/index.js",
   output: {
-    path: path.join(__dirname, '/static/dist'),
+    path: path.join(__dirname, '/public/js'),
     filename: "bundle.js"
   },
   debug: true,
@@ -21,7 +21,8 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel',
         query: {
-          presets: ['react', 'es2015']
+          presets: ['react', 'es2015'],
+          cacheDirectory: true
         }
       }
     ],
