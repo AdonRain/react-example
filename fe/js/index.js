@@ -5,7 +5,14 @@ require('core-js/fn/object/assign');
 
 const React = require('react');
 const {render} = require('react-dom');
+const {Router} = require('react-router');
 const {Provider} = require('react-redux');
-const Root = require('./page/Root').default;
+const {routes, history} = require('./routes').default;
+const store = require('./store');
 
-render(Root, document.getElementById('app'));
+render(
+  <Provider store={store}>
+		<Router routes={routes} history={history} />
+	</Provider>,
+  document.getElementById('app')
+);

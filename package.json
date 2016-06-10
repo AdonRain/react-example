@@ -4,7 +4,7 @@
   "description": "react example",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --content-base public/ --colors --progress"
+    "serve": "webpack-dev-server --content-base public/ --colors --progress"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
     "es3ify-loader": "^0.2.0",
     "gulp": "^3.9.1",
     "gulp-connect": "^4.0.0",
+    "redux-devtools": "^3.3.1",
     "webpack": "^1.13.1"
   },
   "dependencies": {
@@ -33,10 +34,12 @@
     "es6-promise": "^3.2.1",
     "fetch-ie8": "^1.4.2",
     "history": "^1.17.0",
+    "lodash": "^4.13.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-redux": "^4.4.5",
     "react-router": "^1.0.3",
-    "redux": "^3.5.2"
+    "redux": "^3.5.2",
+    "redux-thunk": "^2.1.0"
   }
 }
