@@ -1,7 +1,3 @@
-/*
-This file contains all constants in the app.
-*/
-
 module.exports = {
 	// ACTION TYPES
 	AIM_AT: "AIM_AT",
