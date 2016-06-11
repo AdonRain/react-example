@@ -1,15 +1,6 @@
-import C from '../constants';
-
 export default {
-  battlefield: {
-  	doing: {batman:C.WAITING},
-  	standing: 1,
-  	log: ["Ready.... fight!"]
+  list: {
+    '0': {id: 1, count: 0},
+    '1': {id: 2, count: 1},
   },
-  heroes: {
-  	batman: {
-  		quote: "I'm batman.",
-  		kills: 0
-  	}
-  }
 }

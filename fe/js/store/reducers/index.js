@@ -1,4 +1,3 @@
-import heroes from './heroes';
-import battlefield from './battlefield';
+import list from './list';
 
-export default {heroes, battlefield};
+export default {list};
