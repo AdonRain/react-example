@@ -1,12 +1,17 @@
 import React, {Component} from 'react';
+import active from './active';
 
-export default class Container extends Component {
+class Container extends Component {
   render(){
+    const {title} = this.props;
+
     return (
       <div>
-        <h1>List</h1>
+        <h1>{title}</h1>
         {this.props.children}
       </div>
     )
   }
 }
+
+export default active(Container);

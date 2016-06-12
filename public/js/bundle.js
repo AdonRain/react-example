@@ -67,7 +67,7 @@
 	var routes = _require$default.routes;
 	var history = _require$default.history;
 	
-	var store = __webpack_require__(277);
+	var store = __webpack_require__(278);
 	
 	render(React.createElement(
 	  Provider,
@@ -28706,11 +28706,11 @@
 	
 	var _Container2 = _interopRequireDefault(_Container);
 	
-	var _List = __webpack_require__(270);
+	var _List = __webpack_require__(271);
 	
 	var _List2 = _interopRequireDefault(_List);
 	
-	var _Detail = __webpack_require__(273);
+	var _Detail = __webpack_require__(274);
 	
 	var _Detail2 = _interopRequireDefault(_Detail);
 	
@@ -28744,6 +28744,10 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _active = __webpack_require__(270);
+	
+	var _active2 = _interopRequireDefault(_active);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28764,13 +28768,16 @@
 	  _createClass(Container, [{
 	    key: 'render',
 	    value: function render() {
+	      var title = this.props.title;
+	
+	
 	      return _react2["default"].createElement(
 	        'div',
 	        null,
 	        _react2["default"].createElement(
 	          'h1',
 	          null,
-	          'List'
+	          title
 	        ),
 	        this.props.children
 	      );
@@ -28780,10 +28787,37 @@
 	  return Container;
 	}(_react.Component);
 	
-	exports["default"] = Container;
+	exports["default"] = (0, _active2["default"])(Container);
 
 /***/ },
 /* 270 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _reactRedux = __webpack_require__(247);
+	
+	var mapStateToProps = function mapStateToProps(_ref) {
+		var title = _ref.title;
+		return { title: title };
+	};
+	
+	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+		return {
+			setTitle: function setTitle(title) {
+				return dispatch({ type: 'SET', title: title });
+			}
+		};
+	};
+	
+	exports["default"] = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps);
+
+/***/ },
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28798,11 +28832,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _active = __webpack_require__(271);
+	var _active = __webpack_require__(272);
 	
 	var _active2 = _interopRequireDefault(_active);
 	
-	var _Item = __webpack_require__(272);
+	var _Item = __webpack_require__(273);
 	
 	var _Item2 = _interopRequireDefault(_Item);
 	
@@ -28828,7 +28862,6 @@
 	    value: function render() {
 	      var items = this.props.items;
 	
-	
 	      var list = Object.keys(items).map(function (key) {
 	        var _items$key = items[key];
 	        var id = _items$key.id;
@@ -28836,6 +28869,7 @@
 	
 	        return _react2["default"].createElement(_Item2["default"], { key: id, id: id, count: count });
 	      });
+	
 	      return _react2["default"].createElement(
 	        'ul',
 	        null,
@@ -28850,7 +28884,7 @@
 	exports["default"] = (0, _active2["default"])(List);
 
 /***/ },
-/* 271 */
+/* 272 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28869,7 +28903,7 @@
 	exports["default"] = (0, _reactRedux.connect)(mapStateToProps);
 
 /***/ },
-/* 272 */
+/* 273 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28932,7 +28966,7 @@
 	;
 
 /***/ },
-/* 273 */
+/* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28949,15 +28983,15 @@
 	
 	var _reactRouter = __webpack_require__(200);
 	
-	var _Driver = __webpack_require__(274);
+	var _Driver = __webpack_require__(275);
 	
 	var _Driver2 = _interopRequireDefault(_Driver);
 	
-	var _Receiver = __webpack_require__(275);
+	var _Receiver = __webpack_require__(276);
 	
 	var _Receiver2 = _interopRequireDefault(_Receiver);
 	
-	var _active = __webpack_require__(276);
+	var _active = __webpack_require__(277);
 	
 	var _active2 = _interopRequireDefault(_active);
 	
@@ -29015,7 +29049,7 @@
 	exports["default"] = (0, _active2["default"])(Detail);
 
 /***/ },
-/* 274 */
+/* 275 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29077,7 +29111,7 @@
 	exports["default"] = Driver;
 
 /***/ },
-/* 275 */
+/* 276 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29129,7 +29163,7 @@
 	exports["default"] = Driver;
 
 /***/ },
-/* 276 */
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29159,22 +29193,22 @@
 	exports["default"] = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps);
 
 /***/ },
-/* 277 */
+/* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var _redux = __webpack_require__(254);
 	
-	var _reduxThunk = __webpack_require__(278);
+	var _reduxThunk = __webpack_require__(279);
 	
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 	
-	var _initialstate = __webpack_require__(279);
+	var _initialstate = __webpack_require__(280);
 	
 	var _initialstate2 = _interopRequireDefault(_initialstate);
 	
-	var _reducers = __webpack_require__(280);
+	var _reducers = __webpack_require__(281);
 	
 	var _reducers2 = _interopRequireDefault(_reducers);
 	
@@ -29183,7 +29217,7 @@
 	module.exports = (0, _redux.applyMiddleware)(_reduxThunk2["default"])(_redux.createStore)((0, _redux.combineReducers)(_reducers2["default"]), _initialstate2["default"]);
 
 /***/ },
-/* 278 */
+/* 279 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29211,7 +29245,7 @@
 	exports['default'] = thunk;
 
 /***/ },
-/* 279 */
+/* 280 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29220,29 +29254,12 @@
 	  value: true
 	});
 	exports["default"] = {
+	  title: 'App',
 	  list: {
 	    '0': { id: 1, count: 0 },
 	    '1': { id: 2, count: 1 }
 	  }
 	};
-
-/***/ },
-/* 280 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _list = __webpack_require__(281);
-	
-	var _list2 = _interopRequireDefault(_list);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-	
-	exports["default"] = { list: _list2["default"] };
 
 /***/ },
 /* 281 */
@@ -29251,10 +29268,64 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _title = __webpack_require__(282);
+	
+	var _title2 = _interopRequireDefault(_title);
+	
+	var _list = __webpack_require__(283);
+	
+	var _list2 = _interopRequireDefault(_list);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	
+	exports["default"] = { title: _title2["default"], list: _list2["default"] };
+
+/***/ },
+/* 282 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
 	
-	var _initialstate = __webpack_require__(279);
+	var _initialstate = __webpack_require__(280);
+	
+	var _initialstate2 = _interopRequireDefault(_initialstate);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	
+	var reducer = function reducer(state, action) {
+		var newState = Object.assign({}, state);
+		var type = action.type;
+		var title = action.title;
+	
+		switch (type) {
+			case 'SET':
+				newState.title = title;
+				return newState;
+			default:
+				return state || _initialstate2["default"].title;
+		}
+	};
+	
+	exports["default"] = reducer;
+
+/***/ },
+/* 283 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _initialstate = __webpack_require__(280);
 	
 	var _initialstate2 = _interopRequireDefault(_initialstate);
 	
